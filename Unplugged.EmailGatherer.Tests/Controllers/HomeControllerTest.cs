@@ -43,7 +43,7 @@ namespace Unplugged.EmailGatherer.Tests
 
         // TODO: Figure out how to mock the ContactsDb...
         [TestMethod, Ignore]
-        public void AddActionShouldSaveChanges2()
+        public void AddActionShouldSaveChanges()
         {
             // Arrange
             var mockDb = new Mock<ContactsDb>();
