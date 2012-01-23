@@ -1,15 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using Unplugged.EmailGatherer.Models;
 
 namespace Unplugged.EmailGatherer.Controllers
 {
     public class HomeController : Controller
     {
-        //
-        // GET: /Home/
+        public Contacts Context { get; set; }
+
+        public HomeController()
+        {
+            Context = new Contacts();
+        }
 
         public ActionResult Index()
         {
