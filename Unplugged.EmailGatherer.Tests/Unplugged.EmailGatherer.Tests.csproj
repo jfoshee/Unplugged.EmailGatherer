@@ -58,7 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\HomeControllerTest.cs" />
-    <Compile Include="Models\ContactsTest.cs" />
+    <Compile Include="Models\ContactsDbTest.cs" />
     <Compile Include="Models\ContactTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -6,7 +6,7 @@ using Unplugged.EmailGatherer.Models;
 namespace Unplugged.EmailGatherer.Tests.Models
 {
     [TestClass]
-    public class ContactsTest : TestBase<Contacts>
+    public class ContactsDbTest : TestBase<ContactsDb>
     {
         [TestMethod]
         public void ShouldBeDbContext()

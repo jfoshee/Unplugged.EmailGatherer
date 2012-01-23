@@ -3,3 +3,8 @@
 }
 
 <h2>Index</h2>
+@using (Html.BeginForm("Add", "Home", FormMethod.Post))
+{
+    @Html.TextBox("EmailAddress");
+    <input type="submit" />
+}

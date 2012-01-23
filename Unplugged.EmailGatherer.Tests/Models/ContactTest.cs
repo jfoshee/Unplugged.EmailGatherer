@@ -16,5 +16,15 @@ namespace Unplugged.EmailGatherer.Tests.Models
             // Assert
             Assert.IsNull(emailAddress);
         }
+
+        [TestMethod]
+        public void ShouldHavePrimaryKey()
+        {
+            // Arrange
+            int contactId = Subject.ContactId;
+
+            // Assert
+            Assert.AreEqual(0, contactId);
+        }
     }
 }

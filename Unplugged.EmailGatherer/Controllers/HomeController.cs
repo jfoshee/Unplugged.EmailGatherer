@@ -5,11 +5,11 @@ namespace Unplugged.EmailGatherer.Controllers
 {
     public class HomeController : Controller
     {
-        public Contacts Context { get; set; }
+        public ContactsDb ContactsDb { get; set; }
 
         public HomeController()
         {
-            Context = new Contacts();
+            ContactsDb = new ContactsDb();
         }
 
         public ActionResult Index()
@@ -17,5 +17,13 @@ namespace Unplugged.EmailGatherer.Controllers
             return View();
         }
 
+        [HttpPost]
+        public ActionResult Add(string emailAddress)
+        {
+            var contact = new Contact { EmailAddress = emailAddress };
+            ContactsDb.ContactSet.Add(contact);
+            ContactsDb.SaveChanges();
+            return Redirect("http://www.google.com");
+        }
     }
 }
