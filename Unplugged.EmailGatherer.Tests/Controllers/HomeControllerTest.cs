@@ -71,6 +71,20 @@ namespace Unplugged.EmailGatherer.Tests
             Assert.IsNotNull(result);
         }
 
+        [TestMethod]
+        public void ShouldHaveThanksAction()
+        {
+            // Arrange
+
+            // Act
+            ViewResult result = Subject.Thanks();
+
+            // Assert
+            Assert.IsNotNull(result);
+        }
+
+        // TODO: Test logging
+
         private Mock<IDbSet<Contact>> MockDbSet()
         {
             var mockDbSet = new Mock<IDbSet<Contact>>();

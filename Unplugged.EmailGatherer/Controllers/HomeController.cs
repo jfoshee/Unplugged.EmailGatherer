@@ -32,7 +32,12 @@ namespace Unplugged.EmailGatherer.Controllers
             {
                 new LogEvent(ex).Raise();
             }
-            return Redirect("http://www.google.com");
+            return RedirectToAction("Thanks");
+        }
+
+        public ViewResult Thanks()
+        {
+            return View();
         }
     }
 

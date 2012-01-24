@@ -2,9 +2,9 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<p>For updates, enter your email address:</p>
 @using (Html.BeginForm("Add", "Home", FormMethod.Post))
 {
-    @Html.TextBox("EmailAddress");
+    @Html.TextBox("EmailAddress", "", new { type = "email" });
     <input type="submit" />
 }
