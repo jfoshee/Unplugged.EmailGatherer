@@ -4,9 +4,10 @@ body
     font-family: Geogia, Serif;
     color: #232323;
     background-color: #fff;
-    line-height: 50%;
     text-align: center;
 }
+
+p { margin: 0; }
 
 header,
 footer,
