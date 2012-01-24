@@ -1,4 +1,6 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Management;
+using System.Web.Mvc;
 using Unplugged.EmailGatherer.Models;
 
 namespace Unplugged.EmailGatherer.Controllers
@@ -21,9 +23,29 @@ namespace Unplugged.EmailGatherer.Controllers
         public ActionResult Add(string emailAddress)
         {
             var contact = new Contact { EmailAddress = emailAddress };
-            ContactsDb.ContactSet.Add(contact);
-            ContactsDb.SaveChanges();
+            try
+            {
+                ContactsDb.ContactSet.Add(contact);
+                ContactsDb.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                new LogEvent(ex).Raise();
+            }
             return Redirect("http://www.google.com");
+        }
+    }
+
+    public class LogEvent : WebRequestErrorEvent
+    {
+        public LogEvent(Exception ex)
+            : base(null, null, 100001, ex)
+        {
+        }
+
+        public LogEvent(string message)
+            : base(null, null, 100001, new Exception(message))
+        {
         }
     }
 }
